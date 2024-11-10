@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Exploration Timeline</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url(../images/ero-adbox-gallery-highlight-carina-2400x1200.jpg) ;
+        }
+
+        header {
+            background-color: #000000;
+            padding: 10px 20px;
+            color: white;
+            background-image: url(../images/black.jpg);
+        }
+
+        .nav-list {
+            display: flex;
+            align-items: center;
+            list-style-type: none;
+            justify-content: space-between;
+        }
+
+        .nav-list li {
+            margin: 0 15px;
+        }
+
+        .nav-list a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .dropdown {
+            position: relative;
+            text-decoration: none;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .logo img {
+            height: 60px;
+            border-radius: 50%;
+        }
+
+        .search-bar input {
+            padding: 5px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .search-results {
+            margin: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            display: none; /* Hidden initially */
+        }
+
+        .media {
+            position: relative;
+        }
+
+        .solar-system {
+            background-color: #222;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-around;
+            background-color: #333; /* Background color for the options section */
+            padding: 10px 0;
+            background-image: url(../images/13394.png);
+        }
+
+        .options-list .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .options-list .dropbtn {
+            background-color: #444; /* Background color for dropdown buttons */
+            color: white; /* Text color for dropdown buttons */
+            padding: 10px 20px; /* Padding for dropdown buttons */
+            border: none; /* Remove border */
+            cursor: pointer; /* Cursor change on hover */
+        }
+
+        .options-list .dropdown-content {
+            display: none; /* Hidden by default */
+            position: absolute; /* Position dropdown content */
+            background-color: #f9f9f9; /* Background color for dropdown content */
+            min-width: 200px; /* Minimum width of dropdown */
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Shadow for dropdown */
+            z-index: 1; /* Layering of dropdown */
+            color: black; /* Text color for dropdown content */
+            padding: 10px; /* Padding for dropdown content */
+            text-align: left; /* Left-align text in dropdown */
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block; /* Show dropdown content on hover */
+            animation: fadeIn 0.5s; /* Animation for dropdown appearing */
+        }
+
+        .dropdown-content p:hover {
+            background-color: #ddd; /* Background color on hover for paragraphs */
+            padding-left: 10px; /* Padding change on hover */
+            transition: 0.3s; /* Transition for smooth hover effect */
+        }
+
+        /* Fade-in animation for dropdown */
+        @keyframes fadeIn {
+            from { opacity: 0; } /* Start from transparent */
+            to { opacity: 1; } /* Fade to opaque */
+        }
+
+        .division {
+            background-image: url(../images/plan.jpg);
+            height: 700px;
+            width: 100%;
+            padding-top: 20px;
+        }
+
+        .division h1 {
+            color: rgb(175, 151, 159);
+            margin-left: 30px;
+            margin-top: 200px;
+            font-size: 50px;
+        }
+
+        .division p {
+            padding-left: 30px;
+            color: white;
+            font-size: x-large;
+        }
+
+        .content {
+            display: none; /* Hidden initially */
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+        .content {
+            display: none; /* Hidden initially */
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            margin-top: 5px;
+        }  
+    footer {
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.social-icons {
+    margin-bottom: 15px;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.social-icon img {
+    width: 50px;
+    margin: 0 10px;
+    border-radius: 50%;
+}
+
+.nasa-logo img {
+    height: 60px;
+    width: 60px;
+    margin: 20px 0;
+    border-radius: 50%;
+}
+
+p {
+    margin: 5px 0;
+    font-size: 14px;
+} 
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-list">
+                <li class="dropdown">
+                    <a href="#" class="dropbtn"><h2>Explore</h2></a>
+                    <div class="dropdown-content">
+                        <a href="index.html">Home</a>
+                        <a href="missions.html">Missions</a>
+                        <a href="astronauts.html">Astronauts</a>
+                        <a href="gallery.html">Gallery</a>
+                        <a href="future.html">Future</a>
+                        <a href="contact.html">Contact Us</a>
+                    </div>
+                </li>
+                <li class="logo">
+                    <img src="../images/logo.jpg" alt="Logo" height="50px" width="50px">
+                </li>
+
+                <li class="search-bar">
+                    <input type="text" id="searchBox" placeholder="Search..." onkeyup="performSearch()">
+                </li>
+                <li class="media">
+                    <a href="#">Media</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="options-list">
+        <li class="dropdown">
+            <button class="dropbtn">Solar System Home</button>
+            <div class="dropdown-content">
+                <p>Fact 1: The solar system is 4.6 billion years old.</p>
+                <p>Fact 2: The sun contains 99.86% of the solar system's mass.</p>
+                <p>Fact 3: There are eight planets in the solar system.</p>
+                <p>Fact 4: Jupiter is the largest planet.</p>
+                <p>Fact 5: Saturn has the most spectacular rings.</p>
+                <p>Fact 6: Venus is the hottest planet.</p>
+                <p>Fact 7: Mars has the largest volcano in the solar system.</p>
+                <p>Fact 8: Earth is the only planet known to support life.</p>
+            </div>
+        </li>
+        <li class="dropdown">
+            <button class="dropbtn" onclick="toggleContent('planets')">Planets</button>
+            <div class="dropdown-content" id="planets">
+                <p>Mercury</p>
+                <p>Venus</p>
+                <p>Earth</p>
+                <p>Mars</p>
+                <p>Jupiter</p>
+                <p>Saturn</p>
+                <p>Uranus</p>
+                <p>Neptune</p>
+            </div>
+        </li>
+        <li class="dropdown">
+            <button class="dropbtn" onclick="toggleContent('moons')">Moons</button>
+            <div class="dropdown-content" id="moons">
+                <p>Moon (Earth)</p>
+                <p>Io (Jupiter)</p>
+                <p>Europa (Jupiter)</p>
+                <p>Ganymede (Jupiter)</p>
+                <p>Callisto (Jupiter)</p>
+            </div>
+        </li>
+        <li class="dropdown">
+            <button class="dropbtn" onclick="toggleContent('asteroids')">Asteroids</button>
+            <div class="dropdown-content" id="asteroids">
+                <p>Ceres</p>
+                <p>Vesta</p>
+                <p>Pallas</p>
+            </div>
+        </li>
+        <li class="dropdown">
+            <button class="dropbtn" onclick="toggleContent('comets')">Comets</button>
+            <div class="dropdown-content" id="comets">
+                <p>Halley's Comet</p>
+                <p>Comet NEOWISE</p>
+                <p>Swift-Tuttle</p>
+            </div>
+        </li>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+    <div class="division">
+        <h1>Space Exploration Timeline</h1>
+        <p>Welcome to the Space Exploration Timeline. Here, you can explore the wonders of our universe!</p>
+    </div>
+    <div class="timeline">
+        <h2>1958 - 2018</h2>
+        <div class="timeline-container">
+
+            <div class="timeline-item left">
+                <button class="time-period" onclick="toggleContent('content1')">1958 - 1967 ▼</button>
+                <div id="content1" class="content">
+                    <p>1958: NASA Founded</p>
+                    <p>1961: Yuri Gagarin becomes first human in space</p>
+                    <p>1967: Apollo 1 tragedy</p>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <button class="time-period" onclick="toggleContent('content2')">1968 - 1977 ▼</button>
+                <div id="content2" class="content">
+                    <p>1969: Apollo 11 lands on the Moon</p>
+                    <p>1973: Launch of Skylab</p>
+                    <p>1977: Voyager 1 launched</p>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <button class="time-period" onclick="toggleContent('content3')">1978 - 1987 ▼</button>
+                <div id="content3" class="content">
+                    <p>1978: First test flight of Space Shuttle</p>
+                    <p>1986: Challenger disaster</p>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <button class="time-period" onclick="toggleContent('content4')">1988 - 1997 ▼</button>
+                <div id="content4" class="content">
+                    <p>1990: Hubble Space Telescope launched</p>
+                    <p>1997: Mars Pathfinder lands on Mars</p>
+                </div>
+            </div>
+
+            <div class="timeline-item left">
+                <button class="time-period" onclick="toggleContent('content5')">1998 - 2007 ▼</button>
+                <div id="content5" class="content">
+                    <p>2000: First crew arrives at International Space Station</p>
+                    <p>2003: Space Shuttle Columbia disaster</p>
+                </div>
+            </div>
+
+            <div class="timeline-item right">
+                <button class="time-period" onclick="toggleContent('content6')">2008 - 2018 ▼</button>
+                <div id="content6" class="content">
+                    <p>2011: Final Space Shuttle flight</p>
+                    <p>2015: New Horizons flies by Pluto</p>
+                    <p>2018: Mars InSight lands on Mars</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="social-icons">
+                <a href="#" class="social-icon"><img src="../images/fb.png" alt="Facebook"></a>
+                <a href="#" class="social-icon"><img src="../images/twi.jpg" alt="Twitter"></a>
+                <a href="#" class="social-icon"><img src="../images/t.png" alt="Tumblr" height="50px"></a>
+                <a href="#" class="social-icon"><img src="../images/gmail.png" alt="Email" height="50px"></a>
+            </div>
+            <div class="nasa-logo">
+                <img src="../images/logo.jpg" alt="NASA">
+            </div>
+            <p>National Aeronautics and Space Administration</p>
+            <p>NASA Official: Brian Dunbar</p>
+        </div>
+    </footer>
+    <script>
+        function performSearch() {
+            const searchBox = document.getElementById('searchBox');
+            const searchResults = document.getElementById('searchResults');
+            searchResults.innerHTML = ''; // Clear previous results
+
+            if (searchBox.value.length > 0) {
+                searchResults.style.display = 'block';
+                searchResults.innerHTML = `<p>Searching for: ${searchBox.value}</p>`;
+            } else {
+                searchResults.style.display = 'none';
+            }
+        }
+
+        function toggleContent(contentId) {
+            // Get all content items
+            const allContents = document.querySelectorAll('.dropdown-content');
+            // Hide all contents
+            allContents.forEach(content => {
+                content.style.display = 'none';
+            });
+
+            // Toggle the clicked content
+            const content = document.getElementById(contentId);
+            content.style.display = content.style.display === 'none' ? 'block' : 'none';
+        }
+        function performSearch() {
+    const searchBox = document.getElementById('searchBox');
+    const searchResults = document.getElementById('searchResults');
+    searchResults.innerHTML = ''; // Clear previous results
+
+    if (searchBox.value.length > 0) {
+        searchResults.style.display = 'block';
+        searchResults.innerHTML = `<p>No result found: ${searchBox.value}</p>`;
+    } else {
+        searchResults.style.display = 'none';
+    }
+    }
+
+        function toggleContent(contentId) {
+    // Get all content items
+        const allContents = document.querySelectorAll('.content');
+    // Hide all contents
+        allContents.forEach(content => {
+     if (content.id !== contentId) {
+            content.style.display = 'none';
+        }
+    });
+
+    // Toggle the clicked content
+    const content = document.getElementById(contentId);
+    content.style.display = content.style.display === 'none' ? 'block' : 'none';
+    }
+    function toggleContent(contentId) {
+    const content = document.getElementById(contentId);
+    const allContents = document.querySelectorAll('.content');
+
+    // Hide all contents first
+    allContents.forEach((item) => {
+        item.style.display = 'none'; // Hide all content sections
+    });
+
+    // Toggle the selected content
+    if (content.style.display === 'block') {
+        content.style.display = 'none'; // If already open, close it
+    } else {
+        content.style.display = 'block'; // Open the selected content
+    }
+    }
+    </script>
+</body>
+</html>
